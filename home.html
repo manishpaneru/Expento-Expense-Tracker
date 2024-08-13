@@ -19,7 +19,7 @@ body {
 .container {
     width: 85%;
     max-width: 1200px;
-    margin: 30px auto; /* Center the container */
+    margin: 30px auto;
 }
 
 .welcome-message {
@@ -42,7 +42,6 @@ body {
     gap: 30px;
 }
 
-/* Card Styles (for expense dialog, total box, and table container) */
 .card {
     background-color: #ffffff;
     padding: 30px;
@@ -56,7 +55,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Form Styles */
 .form-group {
     margin-bottom: 20px;
 }
@@ -89,15 +87,14 @@ body {
     background-color: #005459;
 }
 
-/* Table Styles */
 .expense-table-container {
-    flex: 1; /* Allow the table container to grow */
+    flex: 1;
 }
 
 .expense-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 0; /* Remove extra margin from the table itself */
+    margin-top: 0;
 }
 
 .expense-table th,
@@ -125,12 +122,10 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Logout Button (using Bootstrap classes) */
 .logout-btn {
     margin-top: 10px; 
 }
 
-/* Fade In Animation */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -138,7 +133,6 @@ body {
 
 </style>
 {% endblock %}
-
 
 {% block content %}
 
@@ -159,14 +153,12 @@ body {
                 </div>
                 <div class="form-group">
                     <label for="amount">Amount:</label>
-                    <input type="number" id="amount" name="amount" class="form-control"   
- required>
+                    <input type="number" id="amount" name="amount" class="form-control" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Add Expense</button> 
             </form>
 
-            <div   
- class="total-box card mt-4"> 
+            <div class="total-box card mt-4"> 
                 <h2 class="card-title">Total Expenses: ${{ total_expenses }}</h2>
             </div>
         </div>
@@ -196,18 +188,13 @@ body {
     </div>
 </div>
 
-
 <script>
-    // Smooth Scrolling (retain existing script)
-
-    // Add a subtle row highlight effect on hover
     const rows = document.querySelectorAll('.expense-table tr');
     rows.forEach(row => {
         row.addEventListener('mouseover', () => {
-            row.style.backgroundColor = '#e0e0e0'; // Slightly darker background on hover
+            row.style.backgroundColor = '#e0e0e0';
         });
         row.addEventListener('mouseout', () => {
-            // Reset background color based on row's original state
             const isEvenRow = Array.from(row.parentNode.children).indexOf(row) % 2 === 0;
             row.style.backgroundColor = isEvenRow ? '#f9f9f9' : 'transparent';
         });
