@@ -6,119 +6,111 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-    /* Overall Page Styling */
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        background: linear-gradient(135deg, #1d2b64, #f8cdda); /* Elegant gradient */
-        background-size: 200% 200%; /* For gradient animation */
-        animation: gradientAnimation 10s ease infinite; /* Apply animation */
-        font-family: 'Poppins', sans-serif; /* Enhanced font */
-        margin: 0;
-        padding: 0;
-    }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1d2b64, #f8cdda);
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease infinite;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-    /* Login Form Container */
-    .login-container {
-        background-color: #ffffff; /* cleaner color */
-        padding: 50px;
-        border-radius: 15px; /* softer edges */
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* elevated shadow */
-        width: 100%;
-        max-width: 400px; /* responsive width */
-        transition: transform 0.3s ease;
-    }
+.login-container {
+    background-color: #ffffff;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease;
+}
 
-    .login-container:hover {
-        transform: translateY(-5px);
-    }
+.login-container:hover {
+    transform: translateY(-5px);
+}
 
-    /* Heading */
-    h1 {
-        text-align: center;
-        color: #333;
-        font-weight: 600;
-        margin-bottom: 30px;
-    }
+h1 {
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
 
-    /* Form Elements */
-    label {
-        display: block;
-        margin-bottom: 10px;
-        font-weight: 500;
-        color: #555;
-    }
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #555;
+}
 
-    input[type="text"], input[type="password"] {
-        width: 100%;
-        padding: 15px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        box-sizing: border-box;
-        margin-bottom: 20px;
-        font-size: 16px;
-        transition: border-color 0.3s, box-shadow 0.3s; /* Add smooth box-shadow transition */
-    }
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
 
-    input[type="text"]:focus, input[type="password"]:focus {
-        border-color: #4CAF50;
-        outline: none;
-        box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2); /* Subtle green glow on focus */
-    }
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
 
-    /* Login Button */
-    .btn-primary {
-        background: linear-gradient(135deg, #6e8efb, #a777e3); /* gradient button color */
-        color: white;
-        padding: 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        width: 100%;
-        font-size: 16px;
-        transition: background-color 0.3s, transform 0.2s;
-    }
+.btn-primary {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
 
-    .btn-primary:hover {
-        background: linear-gradient(135deg, #5a79e7, #946ed2); /* darker gradient on hover */
-    }
+.btn-primary:hover {
+    background: linear-gradient(135deg, #5a79e7, #946ed2);
+}
 
-    .btn-primary:active {
-        transform: scale(0.95);
-    }
+.btn-primary:active {
+    transform: scale(0.95);
+}
 
-    /* Error Message */
-    .error-message {
-        color: #e74c3c;
-        text-align: center;
-        margin-bottom: 10px;
-        font-size: 14px;
-    }
+.error-message {
+    color: #e74c3c;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
 
-    /* Registration Link */
-    .register-link {
-        text-align: center;
-        margin-top: 20px;
-    }
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+}
 
-    .register-link a {
-        color: #3498db; /* clearer link color */
-        text-decoration: none;
-        font-weight: 500;
-    }
+.register-link a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
 
-    .register-link a:hover {
-        text-decoration: underline;
-    }
+.register-link a:hover {
+    text-decoration: underline;
+}
 
-    /* Background Animation */
-    @keyframes gradientAnimation {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 </style>
 {% endblock %}
 
@@ -147,17 +139,14 @@
         <p></p>
         <p></p>
         <p class="register-link">Created By Manish Paneru</p>
-        
     </div>
 
     <script>
-        // Add a subtle "breathing" effect to the logo (if you have one)
         const logo = document.querySelector('.logo');
         if (logo) {
             logo.style.animation = 'logoBreathing 3s ease-in-out infinite';
         }
 
-        // Keyframes for the logo animation
         const styleSheet = document.styleSheets[0];
         const keyframesRule = `@keyframes logoBreathing {
             0% { transform: scale(1); }
