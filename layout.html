@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Expento{% endblock %}</title>
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: 'Arial', sans-serif; /* Modern sans-serif font */
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Subtle gray background */
+            color: #333; /* Dark text for contrast */
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            font-weight: 300; /* Lighter font weight for a minimalist look */
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Content Block */
+        .content {
+            padding: 20px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        /* Add more CSS as needed for specific design elements */
+    </style>
+    {% block head %}{% endblock %} 
+</head>
+<body>
+    <nav>
+       
+            
+    </nav>
+
+    <div class="container">
+        {% block content %}{% endblock %} 
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Expento</p>
+    </footer>
+
+    <script>
+        // Add JavaScript for interactive elements here (if needed)
+    </script>
+</body>
+</html>

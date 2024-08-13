@@ -1,0 +1,159 @@
+{% extends "layout.html" %}
+
+{% block title %}Expento - Register{% endblock %}
+
+{% block head %}
+<style>
+/* Modern Typography */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #00c9ff, #92fe9d); 
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    margin: 0;
+}
+
+/* Card-like Form Container */
+.register-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+    width: 100%;
+    max-width: 450px; 
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Clean Heading */
+h1 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+/* Form Input Styling */
+label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 14px;
+    color: #555;
+}
+
+input[type="text"], input[type="password"] {
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    font-size: 15px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #00c9ff; 
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 201, 255, 0.2); 
+}
+
+/* Gradient Button with Hover Effect */
+.btn-primary {
+    background: linear-gradient(135deg, #00c9ff, #92fe9d); 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #00b3e6, #7ae582); 
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15); /* Increased shadow on hover */
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+/* Error Message */
+.error-message {
+    color: #e74c3c;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Login Link */
+.login-link {
+    margin-top: 20px;
+}
+
+.login-link a {
+    color: #00c9ff;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Background Animation - Subtle gradient shift */
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+body {
+    background-size: 200% 100%;
+    animation: backgroundAnimation 10s linear infinite;
+}
+</style>
+
+{% endblock %}
+
+{% block content %}
+<div class="register-container">
+    <h1>Welcome to Expento</h1>
+
+    {% if error %}
+        <p class="error-message">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST" action="/register">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <input type="submit" value="Register" class="btn-primary">
+    </form>
+
+    <p class="login-link">Already have an account? <a href="/">Login here</a></p>
+    <p></p>
+    <p class="login-link">Created by Manish Paneru</p>
+</div>
+
+
+
+<script>
+    window.addEventListener('load', () => {
+        const registerContainer = document.querySelector('.register-container');
+        registerContainer.style.opacity = 1;
+        registerContainer.style.transform = 'translateY(0)';
+    });
+</script>
+{% endblock %}
